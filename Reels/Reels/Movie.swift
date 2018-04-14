@@ -10,6 +10,5 @@ import Foundation
 
 struct Movie{
     
-    
-    //1. Define the Movie Object based on the JSON 
+    //1. Define the Movie Object based on the JSON
 }
