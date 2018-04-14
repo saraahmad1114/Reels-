@@ -12,6 +12,8 @@ struct APIClient{
     
     //1. function for the API call for a search for title
     
+    
+    
     //2. function for the API call for a specific title of a movie
     
     //3. Function for the API call passing movie Id to get further information about specific title 
