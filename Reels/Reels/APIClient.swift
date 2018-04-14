@@ -21,8 +21,9 @@ struct APIClient{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let unwrappedData = data else {print("unwrappedData did not unwrap"); return}
             do{
-                let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! Array<Any>
-                jsonArray = json
+                let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: Any]
+                guard let searchValueArray = json["Search"] as? Array<Any> else{print("searchValueArray did not unwrap"); return}
+                jsonArray = searchValueArray
                 completion(jsonArray)
             }
             catch let error{
