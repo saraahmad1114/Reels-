@@ -17,6 +17,7 @@
 		580F596B2061BBE4007824D0 /* ReelsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F596A2061BBE4007824D0 /* ReelsUITests.swift */; };
 		580F59792061BD6B007824D0 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F59782061BD6B007824D0 /* Secrets.swift */; };
 		5814082820819F5F0098ADA0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5814082720819F5F0098ADA0 /* APIClient.swift */; };
+		5814082A2081A0360098ADA0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581408292081A0360098ADA0 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		580F596C2061BBE4007824D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		580F59782061BD6B007824D0 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		5814082720819F5F0098ADA0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		581408292081A0360098ADA0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				580F59472061BBE4007824D0 /* AppDelegate.swift */,
 				580F59492061BBE4007824D0 /* ViewController.swift */,
 				5814082720819F5F0098ADA0 /* APIClient.swift */,
+				581408292081A0360098ADA0 /* Movie.swift */,
 				580F59782061BD6B007824D0 /* Secrets.swift */,
 				580F594B2061BBE4007824D0 /* Main.storyboard */,
 				580F59512061BBE4007824D0 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 			files = (
 				580F594A2061BBE4007824D0 /* ViewController.swift in Sources */,
 				580F59792061BD6B007824D0 /* Secrets.swift in Sources */,
+				5814082A2081A0360098ADA0 /* Movie.swift in Sources */,
 				580F59502061BBE4007824D0 /* Reels.xcdatamodeld in Sources */,
 				5814082820819F5F0098ADA0 /* APIClient.swift in Sources */,
 				580F59482061BBE4007824D0 /* AppDelegate.swift in Sources */,
