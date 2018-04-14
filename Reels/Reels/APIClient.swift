@@ -34,6 +34,25 @@ struct APIClient{
     }
     
     //2. Function for the API call passing movie Id to get further information about specific title
+    func getMovieDetailedInformation (movieId: String, completion:@escaping([String: Any])->()) throws {
+        var jsonDictionary = [String: Any]()
+        let url = "http://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&i=\(movieId)"
+        let convertedUrl = URL(string: url)
+        guard let unwrappedConvertedUrl = convertedUrl else{ print("convertedUrl did not unwrap"); return}
+        let request = URLRequest(url: unwrappedConvertedUrl)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let unwrappedData = data else {print("unwrappedData did not unwrap"); return}
+            do{
+                let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: Any]
+                jsonDictionary = json
+                completion(jsonDictionary)
+            }
+            catch let error{
+                print("Error message is: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
+    }
     
     
     //3. Updating an imageview
