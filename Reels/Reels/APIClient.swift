@@ -10,16 +10,33 @@ import Foundation
 
 struct APIClient{
     
-    //1. function for the API call for a search for title
+    //1. function for the API call for a search bar
+    func getMovieInformation (searchText: String, pageNum: Int, completion:@escaping(Array<Any>)->()) throws {
+        var jsonArray = Array<Any>()
+        let newSearchText = searchText.replacingOccurrences(of: " ", with: "+")
+        let url = "http://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&s=\(newSearchText)&page=\(pageNum)"
+        let convertedUrl = URL(string: url)
+        guard let unwrappedConvertedUrl = convertedUrl else{ print("convertedUrl did not unwrap"); return}
+        let request = URLRequest(url: unwrappedConvertedUrl)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let unwrappedData = data else {print("unwrappedData did not unwrap"); return}
+            do{
+                let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! Array<Any>
+                jsonArray = json
+                completion(jsonArray)
+            }
+            catch let error{
+                print("Error message is: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
+    }
+    
+    //2. Function for the API call passing movie Id to get further information about specific title
     
     
+    //3. Updating an imageview
     
-    //2. function for the API call for a specific title of a movie
-    
-    //3. Function for the API call passing movie Id to get further information about specific title 
-    
-    //4. Updating an imageview
-    
-    //5. pagination function
+    //4. pagination function
     
 }

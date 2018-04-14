@@ -9,5 +9,5 @@
 import Foundation
 
 struct Secrets{
-    var movieApiKey = "628817cf"
+    static let movieApiKey = "628817cf"
 }
