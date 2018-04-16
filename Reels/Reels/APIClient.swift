@@ -55,12 +55,9 @@ struct APIClient{
     }
     
     //3. Updating an imageview
-
+    
     
     
     //4. pagination function
-    func incrementNum (pageNum: Int) -> Int {
-        pageNum = pageNum + 1
-        return pageNum
-    }
+
 }
