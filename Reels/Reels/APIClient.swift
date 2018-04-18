@@ -8,30 +8,54 @@
 
 import Foundation
 
-struct APIClient{
+class APIClient{
     
     //1. function for the API call for a search bar
-    func getMovieInformation (searchText: String, pageNum: Int, completion:@escaping(Array<Any>)->()) throws {
-        var jsonArray = Array<Any>()
-        let newSearchText = searchText.replacingOccurrences(of: " ", with: "+")
-        let url = "http://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&s=\(newSearchText)&page=\(pageNum)"
-        let convertedUrl = URL(string: url)
-        guard let unwrappedConvertedUrl = convertedUrl else{ print("convertedUrl did not unwrap"); return}
-        let request = URLRequest(url: unwrappedConvertedUrl)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let unwrappedData = data else {print("unwrappedData did not unwrap"); return}
-            do{
-                let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: Any]
-                guard let searchValueArray = json["Search"] as? Array<Any> else{print("searchValueArray did not unwrap"); return}
-                jsonArray = searchValueArray
-                completion(jsonArray)
-            }
-            catch let error{
-                print("Error message is: \(error.localizedDescription)")
-            }
-        }
-        task.resume()
-    }
+//    func getMovieInformation (searchText: String, pageNum: Int, completion:@escaping(Array<Any>)->()) throws {
+//        var jsonArray = Array<Any>()
+//        let newSearchText = searchText.replacingOccurrences(of: " ", with: "+")
+//        let url = "http://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&s=\(newSearchText)&page=\(pageNum)"
+//        let convertedUrl = URL(string: url)
+//        guard let unwrappedConvertedUrl = convertedUrl else{ print("convertedUrl did not unwrap"); return}
+//        let request = URLRequest(url: unwrappedConvertedUrl)
+//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            guard let unwrappedData = data else {print("unwrappedData did not unwrap"); return}
+//            do{
+//                let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: Any]
+//                guard let searchValueArray = json["Search"] as? Array<Any> else{print("searchValueArray did not unwrap"); return}
+//                jsonArray = searchValueArray
+//                completion(jsonArray)
+//            }
+//            catch let error{
+//                print("Error message is: \(error.localizedDescription)")
+//            }
+//        }
+//        task.resume()
+//    }
+    
+    
+    //1. Function for the API Call for a search bar
+//    class func getMoviesInformation  (searchText: String, page: Int, completion:@escaping ([BriefMovie])-> ()) throws {
+//
+//        let newSearchText = searchText.replacingOccurrences(of: " ", with: "+")
+//
+//        let url = "http://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&s=\(newSearchText)&page=\(page)"
+//        
+//        let convertedUrl = URL(string: url)
+//
+//        guard let unwrappedConvertedUrl = convertedUrl else {print("url did not unwrap"); return}
+//
+//        let request = URLRequest(url: unwrappedConvertedUrl)
+//
+//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+//
+//            guard let unwrappedData = data else {print("did not unwrap data"); return}
+//
+//
+//        }
+//
+//
+//    }
     
     //2. Function for the API call passing movie Id to get further information about specific title
     func getMovieDetailedInformation (movieId: String, completion:@escaping([String: Any])->()) throws {
@@ -58,6 +82,5 @@ struct APIClient{
     
     
     
-    //4. pagination function
 
 }
