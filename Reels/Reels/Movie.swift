@@ -8,37 +8,40 @@
 
 import Foundation
 
-struct Root: Decodable{
-    var search: [BriefMovie]?
+class Root: Decodable{
+    
+    var Search: [BriefMovie]
 }
 
 struct BriefMovie: Decodable{
+    
     private enum CodingKeys: String, CodingKey {
         case Title, Year, imdbID
         case type = "Type"
         case Poster
     }
+    
     var Title: String?
     var Year: String?
     var imdbID: String?
     var type: String?
-    var Poster: String
-}
-
-struct ElaborateMovie{
-    var Title: String?
-    var Year: String?
-    var Rated: String?
-    var Released: String?
-    var Runtime: String?
-    var Genre: String?
-    var Director: String?
-    var Writer: String?
-    var Actors: String?
-    var Plot: String?
-    var Awards: String?
     var Poster: String?
 }
+
+//struct ElaborateMovie{
+//    var Title: String?
+//    var Year: String?
+//    var Rated: String?
+//    var Released: String?
+//    var Runtime: String?
+//    var Genre: String?
+//    var Director: String?
+//    var Writer: String?
+//    var Actors: String?
+//    var Plot: String?
+//    var Awards: String?
+//    var Poster: String?
+//}
 
 
 

@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var pageNum = 1
+    var movieArray = [BriefMovie]()
+    
     //1. Add a search bar
     
     //2. Add a collection view
@@ -18,7 +21,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        do {
+            try APIClient.getMovieInformation(searchText: "The Foutain", pageNum: 1, completion: { (briefMovieArray) in
+                    self.movieArray.append(contentsOf: briefMovieArray)
+                    print("***********************************")
+                    print(self.movieArray)
+                    print("***********************************")
+            })
+        } catch let error{
+            print("error is: \(error.localizedDescription)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
