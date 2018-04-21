@@ -28,6 +28,10 @@ struct BriefMovie: Decodable{
     var Poster: String?
 }
 
+
+//Find the error in the api call 
+
+
 //struct ElaborateMovie{
 //    var Title: String?
 //    var Year: String?
