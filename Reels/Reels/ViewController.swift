@@ -14,17 +14,21 @@ class ViewController: UIViewController, UISearchBarDelegate {
     var movieArray = [BriefMovie]()
     @IBOutlet weak var movieSeachBar: UISearchBar!
     
-    //1. Add a search bar
+    //DEFAULT VALUES TO HIT THE MOVIE COLLECTIONVIEW WITH
+    let movieSearchTerms = ["love", "romance", "mystery", "thriller", "musical", "family", "horror", "sci-fi", "Batman", "Star Wars", "Superman"]
+    var randomNumber = 0
     
-    //2. Add a collection view
+    //1. Add a search bar - DONE
     
-    //3. Inside the cell of the collection view - add a label and an imageview 
+    //2. Add a collection view - WILL BE DOING NEXT
+    
+    //3. Inside the cell of the collection view - add a label and an imageview - WILL BE DOING NEXT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        self.randomNumber = Int(arc4random_uniform(UInt32(self.movieSearchTerms.count)))
 //        do {
-//            try APIClient.getMovieInformation(searchText: "The Fountain", pageNum: 1, completion: { (briefMovieArray) in
+//            try APIClient.getMovieInformation(searchText: self.movieSearchTerms[randomNumber], pageNum: 1, completion: { (briefMovieArray) in
 //                    self.movieArray.append(contentsOf: briefMovieArray)
 //                    print("***********************************")
 //                    print(self.movieArray)
@@ -46,7 +50,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
     }
 
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.movieArray.removeAll()
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 
 }
 
