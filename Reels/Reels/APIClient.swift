@@ -33,7 +33,9 @@ class APIClient{
 
     
     //2. Function for the API call passing movie Id to get further information about specific title
-
+//    class func getElaborateMovieDetails (movieId: String, completion:@escaping([BriefMovie])->()) throws{
+//        
+//    }
     
     //3. Updating an imageview
     
