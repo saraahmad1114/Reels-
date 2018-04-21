@@ -29,7 +29,7 @@ struct BriefMovie: Decodable{
 }
 
 
-struct ElaborateMovie: Decodable{
+class ElaborateMovie: Decodable{
     
     var Title: String?
     var Year: String?

@@ -33,6 +33,16 @@ class ViewController: UIViewController {
 //            print("error is: \(error.localizedDescription)")
 //        }
         
+//        do {
+//            try APIClient.getElaborateMovieDetails(movieId: "tt0414993", completion: { (elaborateMovieDictionary) in
+//                print("*********************************")
+//                dump(elaborateMovieDictionary)
+//                print("*********************************")
+//            })
+//        } catch let error{
+//            print("error is: \(error.localizedDescription)")
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
