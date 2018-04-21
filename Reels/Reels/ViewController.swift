@@ -14,11 +14,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
     var movieArray = [BriefMovie]()
     @IBOutlet weak var movieSeachBar: UISearchBar!
     
-    //DEFAULT VALUES TO HIT THE MOVIE COLLECTIONVIEW WITH
     let movieSearchTerms = ["love", "romance", "mystery", "thriller", "musical", "family", "horror", "sci-fi", "Batman", "Star Wars", "Superman"]
     var randomNumber = 0
     
-    //1. Add a search bar - DONE
+    //1. Add a UISearchBar - Everything works for now! 
     
     //2. Add a collection view - WILL BE DOING NEXT
     
@@ -26,30 +25,22 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.randomNumber = Int(arc4random_uniform(UInt32(self.movieSearchTerms.count)))
-//        do {
-//            try APIClient.getMovieInformation(searchText: self.movieSearchTerms[randomNumber], pageNum: 1, completion: { (briefMovieArray) in
-//                    self.movieArray.append(contentsOf: briefMovieArray)
-//                    print("***********************************")
-//                    print(self.movieArray)
-//                    print("***********************************")
-//            })
-//        } catch let error{
-//            print("error is: \(error.localizedDescription)")
-//        }
-        
-//        do {
-//            try APIClient.getElaborateMovieDetails(movieId: "tt0414993", completion: { (elaborateMovieDictionary) in
-//                print("*********************************")
-//                dump(elaborateMovieDictionary)
-//                print("*********************************")
-//            })
-//        } catch let error{
-//            print("error is: \(error.localizedDescription)")
-//        }
+        self.randomNumber = Int(arc4random_uniform(UInt32(self.movieSearchTerms.count)))
+        do {
+            try APIClient.getMovieInformation(searchText: self.movieSearchTerms[randomNumber], pageNum: 1, completion: { (briefMovieArray) in
+                    self.movieArray.append(contentsOf: briefMovieArray)
+                    print("***********************************")
+                    print(self.movieArray)
+                    print("***********************************")
+            })
+        } catch let error{
+            print("error is: \(error.localizedDescription)")
+        }
+
         
     }
 
+    //Search Bar functions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.movieArray.removeAll()
         if let userSearchText = self.movieSeachBar.text{
