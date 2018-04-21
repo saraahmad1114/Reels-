@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            try APIClient.getMovieInformation(searchText: "The Foutain", pageNum: 1, completion: { (briefMovieArray) in
+            try APIClient.getMovieInformation(searchText: "The Fountain", pageNum: 1, completion: { (briefMovieArray) in
                     self.movieArray.append(contentsOf: briefMovieArray)
                     print("***********************************")
                     print(self.movieArray)

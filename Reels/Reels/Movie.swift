@@ -17,14 +17,14 @@ struct BriefMovie: Decodable{
     
     private enum CodingKeys: String, CodingKey {
         case Title, Year, imdbID
-        case type = "Type"
+        //case type = "Type"
         case Poster
     }
     
     var Title: String?
     var Year: String?
     var imdbID: String?
-    var type: String?
+    //var type: String?
     var Poster: String?
 }
 
