@@ -52,7 +52,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.movieArray.removeAll()
-        
+        if let userSearchText = self.movieSeachBar.text{
+        do {
+         try APIClient.getMovieInformation(searchText: userSearchText, pageNum: 1, completion: { (briefMovieArray) in
+        self.movieArray.append(contentsOf: briefMovieArray)
+        print("***********************************")
+        print(self.movieArray)
+        print("***********************************")
+        })
+        } catch let error{
+            print("error is: \(error.localizedDescription)")
+        }
+        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
