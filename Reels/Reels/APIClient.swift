@@ -12,7 +12,6 @@ class APIClient{
     
     //1. function for the API call for a search bar
     class func getMovieInformation (searchText: String, pageNum: Int, completion:@escaping([BriefMovie])->()) throws {
-        
       let newSearchText = searchText.replacingOccurrences(of: " ", with: "+")
       let url = "https://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&s=\(newSearchText)&page=\(pageNum)"
       let convertedUrl = URL(string: url)
