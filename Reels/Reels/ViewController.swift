@@ -21,17 +21,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            try APIClient.getMovieInformation(searchText: "The Fountain", pageNum: 1, completion: { (briefMovieArray) in
-                    self.movieArray.append(contentsOf: briefMovieArray)
-                    print("***********************************")
-                    print(self.movieArray)
-                    print("***********************************")
-            })
-        } catch let error{
-            print("error is: \(error.localizedDescription)")
-        }
         
+//        do {
+//            try APIClient.getMovieInformation(searchText: "The Fountain", pageNum: 1, completion: { (briefMovieArray) in
+//                    self.movieArray.append(contentsOf: briefMovieArray)
+//                    print("***********************************")
+//                    print(self.movieArray)
+//                    print("***********************************")
+//            })
+//        } catch let error{
+//            print("error is: \(error.localizedDescription)")
+//        }
         
     }
 
