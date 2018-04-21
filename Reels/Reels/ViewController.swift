@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
     
     var pageNum = 1
     var movieArray = [BriefMovie]()
+    @IBOutlet weak var movieSeachBar: UISearchBar!
     
     //1. Add a search bar
     
@@ -45,10 +46,6 @@ class ViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
