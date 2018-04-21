@@ -9,18 +9,15 @@
 import Foundation
 
 class Root: Decodable{
-    
     var Search: [BriefMovie]
 }
 
 struct BriefMovie: Decodable{
-    
     private enum CodingKeys: String, CodingKey {
         case Title, Year, imdbID
         case type = "Type"
         case Poster
     }
-    
     var Title: String?
     var Year: String?
     var imdbID: String?
@@ -30,7 +27,6 @@ struct BriefMovie: Decodable{
 
 
 struct ElaborateMovie: Decodable{
-    
     var Title: String?
     var Year: String?
     var Rated: String?

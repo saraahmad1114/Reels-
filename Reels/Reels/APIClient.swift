@@ -42,7 +42,7 @@ class APIClient{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let unwrappedData = data else {print("unwrappedData did not unwrap"); return}
             do {
-                var elaborateMovieDictionary = try JSONDecoder().decode(ElaborateMovie.self, from: unwrappedData)
+                var elaborateMovieDictionary = try JSONDecoder().decode(ElaborateMovie.self, from: unwrappedData) 
                 completion(elaborateMovieDictionary)
             }
             catch let error {
