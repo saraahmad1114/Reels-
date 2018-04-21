@@ -12,6 +12,7 @@ class APIClient{
     
     //1. function for the API call for a search bar
     class func getMovieInformation (searchText: String, pageNum: Int, completion:@escaping([BriefMovie])->()) throws {
+        
       let newSearchText = searchText.replacingOccurrences(of: " ", with: "+")
       let url = "https://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&s=\(newSearchText)&page=\(pageNum)"
       let convertedUrl = URL(string: url)
@@ -33,9 +34,14 @@ class APIClient{
 
     
     //2. Function for the API call passing movie Id to get further information about specific title
-//    class func getElaborateMovieDetails (movieId: String, completion:@escaping([BriefMovie])->()) throws{
-//        
-//    }
+    class func getElaborateMovieDetails (movieId: String, completion:@escaping([BriefMovie])->()) throws{
+        
+        let url = "https://www.omdbapi.com/?apikey=\(Secrets.movieApiKey)&i=\(movieId)"
+        let convertedUrl = URL(string: url)
+        guard let unwrappedConvertedUrl = convertedUrl else {print("unwrappedConvertedUrl did not unwrap"); return}
+        let request = URLRequest(url: unwrappedConvertedUrl)
+        
+    }
     
     //3. Updating an imageview
     

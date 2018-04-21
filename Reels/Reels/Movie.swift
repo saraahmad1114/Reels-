@@ -29,23 +29,21 @@ struct BriefMovie: Decodable{
 }
 
 
-//Find the error in the api call 
-
-
-//struct ElaborateMovie{
-//    var Title: String?
-//    var Year: String?
-//    var Rated: String?
-//    var Released: String?
-//    var Runtime: String?
-//    var Genre: String?
-//    var Director: String?
-//    var Writer: String?
-//    var Actors: String?
-//    var Plot: String?
-//    var Awards: String?
-//    var Poster: String?
-//}
+struct ElaborateMovie: Decodable{
+    
+    var Title: String?
+    var Year: String?
+    var Rated: String?
+    var Released: String?
+    var Runtime: String?
+    var Genre: String?
+    var Director: String?
+    var Writer: String?
+    var Actors: String?
+    var Plot: String?
+    var Awards: String?
+    var Poster: String?
+}
 
 
 
